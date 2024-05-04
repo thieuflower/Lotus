@@ -14,12 +14,13 @@ const keyPairInitState = [
 ];
 
 export default function Request({ setResponse, setLoading, loading }) {
-  const [url, setUrl] = useState('https://jsonplaceholder.typicode.com/todos/1');
-  const [reqMethod, setReqMethod] = useState('GET');
+  const [url, setUrl] = useState('http://localhost:5002/users/v1/login');
+  const [reqMethod, setReqMethod] = useState('POST');
   const [queryParams, setQueryParams] = useState(keyPairInitState);
   const [headers, setHeaders] = useState(keyPairInitState);
   const [body, setBody] = useState('{\n\t\n}');
-
+// khi ấn vào nut send thì hàm này sẽ được action 
+// Gửi HTTP request qua thư viện axios
   const handleOnInputSend = async (e) => {
     setLoading(true);
 
